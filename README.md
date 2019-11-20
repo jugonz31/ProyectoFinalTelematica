@@ -18,3 +18,9 @@ En primer lugar, descargué el dataset de la pagina web proporcionada:
 
 Luego procedemos a subir la tabla al Databricks para poder utilizarlo en nuestro notebook: 
 ![](https://i.ibb.co/VLcs0Wy/s2.png)
+
+Una vez subidos y leidos los datos en el notebook, es necesario limpiar los datos y prepararlos para aplicar text mining. Para limpiarlos debemos cumplir con los siguientes requerimientos:
+- Remover caracteres especiales (. , % ( ) ‘ “ ….
+- Remover stop-words
+- Remover palabras de longitud 1
+- Stemming / lemmatization
