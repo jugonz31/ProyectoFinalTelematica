@@ -20,7 +20,14 @@ Luego procedemos a subir la tabla al Databricks para poder utilizarlo en nuestro
 ![](https://i.ibb.co/VLcs0Wy/s2.png)
 
 Una vez subidos y leidos los datos en el notebook, es necesario limpiar los datos y prepararlos para aplicar text mining. Para limpiarlos debemos cumplir con los siguientes requerimientos:
-- Remover caracteres especiales (. , % ( ) ‘ “ ….
-- Remover stop-words
-- Remover palabras de longitud 1
-- Stemming / lemmatization
+
+- *Remover caracteres especiales (. , % ( ) ‘ “ …*
+ Para esta parte utilicé una funcion simple donde compruebo que cada caracter sea alfanumérico o un espacio. En caso contrario lo descarto.
+
+- *Remover stop-words y palabras de longitud 1*
+Aquí utilizo la libreria NLTK (Natural Language Toolkit) la cual me permite tokenizar cada uno de los articulos, para así luego descartar aquellas palabras que son stop-words o de un solo caracter. Esta librería tambien es util para descargar las stopwords del idioma ingles.
+En la tokenizacion utilizo la expresion regular (r'\w') la cual me asegura nuevamente que no hayan signos de puntuacion y me separa cada palabra de acuerdo a los espacios en blanco.
+
+- *Stemming / lemmatization*
+
+Hice uso de la librería Pandas hasta este momento para leer el archivo .csv, ya que esta me permite modificar valores de las tablas de una forma mas eficiente por medio del metodo _apply()_
