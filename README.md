@@ -1,7 +1,12 @@
 # Proyecto Final - Topicos especiales en Telematica
 
 ## Integrantes: 
-> Juan Pablo González
+Juan Pablo González
+
+## Librerias utilizadas:
+- NLTK
+- Pandas
+- TextBlob
 
 ### Entendimiento del problema:
 
@@ -32,3 +37,16 @@ En la tokenizacion utilizo la expresion regular (r'\w') la cual me asegura nueva
 En este caso he decidido aplicar la lematización, ya que será mas util para el analisis de sentimientos que se realizará. La lematización me permite convertir palabras confugadas en su lema o forma canónica sin ir al extremo de convertir las palabras en raices, ya que las raices pueden resultar en la perdida del significado de la palabra. Para este proceso tambien hago uso de la libreria NLTK por medio de la funcion WordNetLemmatizer
 
 Hice uso de la librería Pandas hasta este momento para leer el archivo .csv, ya que esta me permite modificar valores de las tablas de una forma mas eficiente por medio del metodo _apply()_
+
+### Analisis de sentimiento
+
+Para el analisis de sentimiento realizado utilicé la libreria TextBlob que me facilita por medio de sus funciones un analisis léxico de los textos, y una estimacion de polaridad de cada articulo. En el notebook se puede observar el resultado del analisis de sentimiento en el ultimo dataframe, donde la columna "sentiment" nos indica la polaridad como un numero que va entre el rango [-1.0 , 1.0] siendo -1.0 relacionado con un contenido negativo y 1.0 con uno positivo.
+
+Se debe tener en cuenta que al tratarse de un articulo es muy probable que la polaridad oscile entre [-0.5 , 0.5] o incluso menos, dependiendo del contenido noticioso que contenga, ya que son palabras que no se pueden asociar directamente a un sentimiento positivo o negativo.
+
+### Notebook: 
+https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/7467927995929030/1050917737771856/4772904610073869/latest.html
+
+### Referencias
+https://towardsdatascience.com/nlp-for-beginners-cleaning-preprocessing-text-data-ae8e306bef0f
+https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis
